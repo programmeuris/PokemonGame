@@ -68,7 +68,8 @@ namespace PokemonGame.DAL
                         att2Name, att2Val,
                         weakName, weakVal,
                         resName, resVal,
-                        image);
+                        image
+                    );
 
                     pokemon.Add(poke);
                 }
@@ -79,7 +80,7 @@ namespace PokemonGame.DAL
             catch (Exception ex)
             {
                 return null;
-                // throw ex;
+                // log ex.message;
             }
         }
     }

@@ -36,7 +36,7 @@ namespace PokemonGame.Models
         // public methods
         public int Aanvallen()
         {
-            // pick factor 1 or 2
+            // decide on 1 or 2
             int factor = _random.Next(0, 2) == 0 ?
                 AanvalsFactor1 : AanvalsFactor2;
 
@@ -67,7 +67,7 @@ namespace PokemonGame.Models
             Hp -= attackVal;
         }
 
-        public string ToonGegevens() => Levend ?
+        public string ToonGegevens() => IsAlive ?
             $"{Naam} is nog levend.{Environment.NewLine}Resterende HP: {Hp}" :
             $"{Naam} is dood.{Environment.NewLine}Resterende HP: {Hp}";
 
@@ -88,8 +88,7 @@ namespace PokemonGame.Models
         private Random _random = new Random();
 
         // public properties
-        //oefening zegt dat returnwaarde "levend" of "dood" moet zijn maar type moet een bool zijn...
-        public bool Levend { get => Hp > 0; }
+        public bool IsAlive { get => Hp > 0; }
 
         public int AanvalsFactor1
         {

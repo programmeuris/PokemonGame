@@ -14,7 +14,7 @@ namespace PokemonGame.WPF
     /// </summary>
     public partial class GameWindow : Window
     {
-        private MockDb _db = new MockDb();
+        private readonly MockDb _db = new MockDb();
         private List<Pokemon> _pokemon1 = new List<Pokemon>();
         private List<Pokemon> _pokemon2 = new List<Pokemon>();
         private Models.Pokemon _selectedP1;
@@ -30,7 +30,7 @@ namespace PokemonGame.WPF
         {
             var btn = sender as Button;
 
-            if (_selectedP1.Levend && _selectedP2.Levend)
+            if (_selectedP1.IsAlive && _selectedP2.IsAlive)
             {
                 // attack and update defending poke
                 switch (btn.Name)
@@ -63,24 +63,15 @@ namespace PokemonGame.WPF
             cmbSpeler1.ItemsSource = _pokemon1;
             cmbSpeler2.ItemsSource = _pokemon2;
 
-            // set initial battlestate 
             UpdateBattleState();
         }
 
         private void UpdatePlayer1()
         {
-            if (cmbSpeler1.SelectedIndex != -1)
-            {
-                // load in new poke when selecting one from combobox
-                _selectedP1 = cmbSpeler1.SelectedItem as Models.Pokemon;
-                string uri1 = @"\images\" + _selectedP1.Afbeelding;
-                imgSpeler1.Source = new BitmapImage(new Uri(uri1, UriKind.Relative));
-            }
-
             if (_selectedP1 != null)
             {
                 lblPok1.Content = _selectedP1.ToonGegevens();
-                if (_selectedP1.Levend)
+                if (_selectedP1.IsAlive)
                 {
                     // only switch on death
                     cmbSpeler1.IsEnabled = false;
@@ -112,18 +103,10 @@ namespace PokemonGame.WPF
 
         private void UpdatePlayer2()
         {
-            if (cmbSpeler2.SelectedIndex != -1)
-            {
-                // load in new poke when selecting one from combobox
-                _selectedP2 = cmbSpeler2.SelectedItem as Models.Pokemon;
-                string uri2 = @"\images\" + _selectedP2.Afbeelding;
-                imgSpeler2.Source = new BitmapImage(new Uri(uri2, UriKind.Relative));
-            }
-
             if (_selectedP2 != null)
             {
                 lblPok2.Content = _selectedP2.ToonGegevens();
-                if (_selectedP2.Levend)
+                if (_selectedP2.IsAlive)
                 {
                     // only switch on death
                     cmbSpeler2.IsEnabled = false;
@@ -155,18 +138,18 @@ namespace PokemonGame.WPF
 
         private void UpdateBattleState()
         {
-            // defaults to disabled buttons
-            btnP1.IsEnabled = false;
-            btnP2.IsEnabled = false;
-
             // enable buttons when both poke are alive
-            if (_selectedP1 != null && _selectedP2 != null)
+            if ((_selectedP1 != null && _selectedP2 != null) &&
+                (_selectedP1.IsAlive && _selectedP2.IsAlive))
             {
-                if (_selectedP1.Levend && _selectedP2.Levend)
-                {
-                    btnP1.IsEnabled = true;
-                    btnP2.IsEnabled = true;
-                }
+                btnP1.IsEnabled = true;
+                btnP2.IsEnabled = true;
+            }
+            else
+            {
+                // defaults to disabled buttons
+                btnP1.IsEnabled = false;
+                btnP2.IsEnabled = false;
             }
         }
 
@@ -184,16 +167,28 @@ namespace PokemonGame.WPF
             switch (cbo.Name)
             {
                 case "cmbSpeler1":
+                    if (cmbSpeler1.SelectedIndex != -1)
+                    {
+                        // load in new poke when selecting one from combobox
+                        _selectedP1 = cmbSpeler1.SelectedItem as Models.Pokemon;
+                        string uri1 = @"\images\" + _selectedP1.Afbeelding;
+                        imgSpeler1.Source = new BitmapImage(new Uri(uri1, UriKind.Relative));
+                    }
+
                     UpdatePlayer1();
                     break;
                 case "cmbSpeler2":
+                    if (cmbSpeler2.SelectedIndex != -1)
+                    {
+                        // load in new poke when selecting one from combobox
+                        _selectedP2 = cmbSpeler2.SelectedItem as Models.Pokemon;
+                        string uri2 = @"\images\" + _selectedP2.Afbeelding;
+                        imgSpeler2.Source = new BitmapImage(new Uri(uri2, UriKind.Relative));
+                    }
+
                     UpdatePlayer2();
-                    break;
-                default:
                     break;
             }
         }
-
-        
     }
 }
