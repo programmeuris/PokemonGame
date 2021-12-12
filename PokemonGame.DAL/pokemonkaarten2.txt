@@ -1,0 +1,3 @@
+﻿Dragonite;Dragon;180;Bust In;10;Jet Sonic;80;Fairy;2;none;0;Dragonite.png
+Eevee;Colorless;60;Growl;10;Quick Attack;10;Fighting;2;None;0;Eevee.jpg
+Glaceon;Water;200;Frost Bullet;90;Ploas Spear;50;Metal;2;None;0;glaceon.png

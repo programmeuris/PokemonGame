@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PokemonGame.DAL\PokemonGame.DAL.csproj" />
+    <ProjectReference Include="..\PokemonGame.Models\PokemonGame.Models.csproj" />
+  </ItemGroup>
+
+</Project>

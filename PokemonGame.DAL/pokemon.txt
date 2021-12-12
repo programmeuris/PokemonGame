@@ -1,0 +1,36 @@
+﻿Alolan Raticate,Dark,120
+Evil Orders,10
+Endaevor,60
+Fighting,2
+Psychic,20
+alolan raticate.png
+Altaria,Colorless,90
+Draco Melody, 10
+Cotton Guard,30
+Electric,2
+Fighting,20
+altaria.png
+Charizard,Fire,250
+Flamethrower,140
+Flare Blitz,300
+Water,2
+None,0
+Charizard.jpg
+Dragonite,Dragon,180
+Bust In,10
+Jet Sonic,80
+Fairy,2
+None,0
+Dragonite.png
+Eevee,Colorless,60
+Growl,10
+Quick Attack,10
+Fighting,2
+None,0
+Eevee.jpg
+Glaceon,Water,200
+Frost Bullet,90
+Ploas Spear,50
+Metal,2
+None,0
+glaceon.png

@@ -1,0 +1,3 @@
+﻿Alolan Raticate;Dark;120;Evil Orders;10;Endaevor;60;Fighting;2;Psychic;20;alolan raticate.png;
+Altaria;Colorless;90;Draco Melody;10;Cotton Guard;30; Electric;2;fighting;20;altaria.png
+Charizard;Fire;250;Flamethrower;140;Flare Blitz;300;Water;2;none;0;Charizard.jpg
