@@ -50,14 +50,8 @@ namespace PokemonGame.WPF
         private void InitData()
         {
             // read pokemon from txt
-            var _pokemon = _db.GetPokemon("pokemon.txt");
-
-            // split into teams
-            for (int i = 0; i < _pokemon.Count / 2; i++)
-            {
-                _pokemon1.Add(_pokemon[i]);
-                _pokemon2.Add(_pokemon[i + _pokemon.Count / 2]);
-            }
+            _pokemon1 = _db.GetPokemon("pokemon1.txt");
+            _pokemon2 = _db.GetPokemon("pokemon2.txt");
 
             // init cbobox items
             cmbSpeler1.ItemsSource = _pokemon1;

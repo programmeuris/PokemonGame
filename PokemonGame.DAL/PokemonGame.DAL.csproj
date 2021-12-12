@@ -9,7 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="pokemon.txt">
+    <None Update="pokemon2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="pokemon1.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="pokemonkaarten1.txt">
