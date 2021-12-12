@@ -35,18 +35,18 @@ namespace PokemonGame.DAL
                 // att1 and att2
                 string att1Name = split[3];
                 int att1Val = -1;
-                int.TryParse(split[4], out hp);
+                int.TryParse(split[4], out att1Val);
                 string att2Name = split[5];
                 int att2Val = -1;
-                int.TryParse(split[6], out hp);
+                int.TryParse(split[6], out att2Val);
 
                 // resistance and weakness
                 string weakName = split[7];
                 int weakVal = -1;
-                int.TryParse(split[8], out hp);
+                int.TryParse(split[8], out weakVal);
                 string resName = split[9];
                 int resVal = -1;
-                int.TryParse(split[10], out hp);
+                int.TryParse(split[10], out resVal);
 
                 // image, replacing the space is not strictly necessary but meh
                 string img = split[11].Replace(" ", "%20").ToLower();

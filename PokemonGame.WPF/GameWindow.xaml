@@ -23,7 +23,7 @@
         <Image x:Name="imgSpeler2"
                Grid.Row="1" 
                Grid.Column="1"/>
-        <Button Content="Aanvallen >>"
+        <Button Content="Aanvallen &gt;&gt;"
                 Grid.Row="3"
                 Grid.Column="0"
                 x:Name="btnP1"
@@ -42,12 +42,12 @@
         <ComboBox x:Name="cmbSpeler1"
                   Grid.Row="0"
                   Grid.Column="0"
-                  SelectionChanged="Poke1_SelectionChanged"
+                  SelectionChanged="Poke_SelectionChanged"
                   DisplayMemberPath="Naam"/>
         <ComboBox x:Name="cmbSpeler2"
                   Grid.Row="0"
                   Grid.Column="1"
-                  SelectionChanged="Poke2_SelectionChanged"
+                  SelectionChanged="Poke_SelectionChanged"
                   DisplayMemberPath="Naam"/>
     </Grid>
 </Window>
